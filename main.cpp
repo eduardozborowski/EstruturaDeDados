@@ -39,6 +39,7 @@ void popularDoArquivo(Celula **topo, Celula **lista) {
 int main() {
   Celula *pilha = NULL;
   Celula *lista = NULL;
+  Celula *cabeca = NULL;
 
   popularDoArquivo(&pilha, &lista);
   
@@ -61,6 +62,7 @@ int main() {
   lista = excluirLista(numero, lista);
   cout << "Lista após exclusão" << endl;
   exibirLista(lista);
-  
+  deletePrimeiro(&lista);
+  exibirLista(lista);
   return 1;
 }
