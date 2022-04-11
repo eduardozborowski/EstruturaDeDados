@@ -41,6 +41,22 @@ void exibirLista(Celula *lista) {
     cout << p->dado << endl;
   }
 }
+///
+void deletePrimeiro(Celula **cabeca) {
+  Celula *p;
+  if(cabeca == NULL || *cabeca == NULL) return;
+  p = *cabeca;
+  *cabeca = (*cabeca)->prox;
+  free(p);
+}
+
+void deleteUltimo(Celula **cauda) {
+  Celula *prox;
+  if(cauda == NULL || *cauda == NULL) return;
+  prox = *cauda;
+  *cauda = (*cauda)->prox;
+  free(cauda);
+}
 
 
 //inserir na lista de forma ordenada tendo como chave o valorGlicemia
